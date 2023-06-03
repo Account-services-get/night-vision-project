@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-color: rgba(0, 0, 0, 0.603);
+            border-style: groove;
+            border-radius: 10px;
+
+
+        }
+
+        .input-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-section input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .text-section {
+            background-color: #f5f5f5;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            background: #318CE7;
+            border-color: transparent;
+            cursor: pointer;
+
+        }
+
+        span {
+            color: whitesmoke;
+            font-weight: bolder;
+            font-size: 17px;
+            font-family: sans-serif;
+        }
+
+        .p1 {
+            color: transparent;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+
+        .loader {
+            border: 8px solid #000000;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p class="p1">aaaaaaaaaaaaaaaaaaa</p>
+    <div class="container">
+        <div class="input-section">
+            <input type="text" placeholder="Enter the profile link">
+            <p class="p1">goooooooooo</p>
+            <button onclick="myFunction()" id="myButton"><span>Ban</span>
+                <div class="loader"></div>
+            </button>
+        </div>
+        <div class="text-section">
+            <h3>Ban instagram account</h3>
+            <p>paste tha account link on the column so we can proceed the banning .</p>
+        </div>
+    </div>
+</body>
+<script>
+
+    var button = document.getElementById("myButton");
+    var loader = button.querySelector(".loader");
+
+    button.addEventListener("click", function () {
+        loader.style.display = "inline-block";
+        // do some asynchronous task here
+        setTimeout(function () {
+            loader.style.display = "none";
+        }, 10000);
+    });
+    document.getElementById("myButton").addEventListener("click", function () {
+        setTimeout(function () {
+            alert("account will be deleted with in 48h if not try again ");
+        }, 11000); // 10000 milliseconds = 10 seconds
+    });
+</script>
+
+</html>
